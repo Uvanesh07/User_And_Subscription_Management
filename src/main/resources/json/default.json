@@ -1,0 +1,399 @@
+{
+  "subscriptionModule": [
+    {
+      "id": "SUBSCRIPTION01",
+      "name": "Subscription",
+      "parentId": null,
+      "actions": [
+        {
+          "name": "Create Subscription",
+          "action": "POST",
+          "description": "Allows the user to create a new subscription",
+          "pageUrl": "/userms/v1/api/subscription",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Add Service Mapping",
+          "action": "POST",
+          "description": "Allows super admins to add service mapping within the system",
+          "pageUrl": "/userms/v1/api/subscription/servicesMapping",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Subscription",
+          "action": "PUT",
+          "description": "Allows the user to update an existing subscription",
+          "pageUrl": "/userms/v1/api/subscription/{subscriptionId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Subscription Status",
+          "action": "PUT",
+          "description": "Allows the user to update the status of a subscription",
+          "pageUrl": "/userms/v1/api/subscription/changeStatus/{subscriptionId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Delete Subscription",
+          "action": "DELETE",
+          "description": "Allows the user to delete a subscription",
+          "pageUrl": "/userms/v1/api/subscription/{subscriptionId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "View Subscription by Id",
+          "action": "GET",
+          "description": "Allows the user to view a subscription by Id",
+          "pageUrl": "/userms/v1/api/subscription/{subscriptionId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "View All Subscriptions",
+          "action": "GET",
+          "description": "Allows the user to view all subscriptions",
+          "pageUrl": "/userms/v1/api/subscription/getAll",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "View All Active Subscriptions",
+          "action": "GET",
+          "description": "Allows the user to view all active subscriptions",
+          "pageUrl": "/userms/v1/api/subscription/getAllActive",
+          "writeAccess": false,
+          "readAccess": true
+        }
+      ]
+    },
+    {
+      "id": "SERVICE01",
+      "name": "Service",
+      "parentId": "SUBSCRIPTION01",
+      "actions": [
+        {
+          "name": "Create Service",
+          "action": "POST",
+          "description": "Allows the user to create a new service",
+          "pageUrl": "/userms/v1/api/subscription/service",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Service",
+          "action": "PUT",
+          "description": "Allows the user to update an existing service",
+          "pageUrl": "/userms/v1/api/subscription/service/{serviceId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Service Status",
+          "action": "PUT",
+          "description": "Allows the user to update the status of a service",
+          "pageUrl": "/userms/v1/api/subscription/service/changeStatus/{serviceId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Delete Service",
+          "action": "DELETE",
+          "description": "Allows the user to delete a service",
+          "pageUrl": "/userms/v1/api/subscription/service",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "View Service by Id",
+          "action": "GET",
+          "description": "Allows the user to view a service by Id",
+          "pageUrl": "/userms/v1/api/subscription/service/{serviceId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "View All Services",
+          "action": "GET",
+          "description": "Allows the user to view all services",
+          "pageUrl": "/userms/v1/api/subscription/service/getAll",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "View Services by Subscription Id",
+          "action": "GET",
+          "description": "Allows the user to view services by subscription Id",
+          "pageUrl": "/userms/v1/api/subscription/service/subscription/{subscriptionId}",
+          "writeAccess": false,
+          "readAccess": true
+        }
+      ]
+    },
+    {
+      "id": "FEATURE01",
+      "name": "Feature",
+      "parentId": "SERVICE01",
+      "actions": [
+        {
+          "name": "Create Feature",
+          "action": "POST",
+          "description": "Allows the user to create a new feature",
+          "pageUrl": "/userms/v1/api/subscription/service/feature",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Feature",
+          "action": "PUT",
+          "description": "Allows the user to update an existing feature",
+          "pageUrl": "/userms/v1/api/subscription/service/feature/{featureId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Feature Status",
+          "action": "PUT",
+          "description": "Allows the user to update the status of a feature",
+          "pageUrl": "/userms/v1/api/subscription/service/feature/changeStatus/{featureId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Delete Feature",
+          "action": "DELETE",
+          "description": "Allows the user to delete a feature",
+          "pageUrl": "/userms/v1/api/subscription/service/feature/{featureId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "View Feature by Id",
+          "action": "GET",
+          "description": "Allows the user to view a feature by Id",
+          "pageUrl": "/userms/v1/api/subscription/service/feature/{featureId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "View All Features",
+          "action": "GET",
+          "description": "Allows the user to view all features",
+          "pageUrl": "/userms/v1/api/subscription/service/feature/getAll",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "View Features by Service Id",
+          "action": "GET",
+          "description": "Allows the user to view features by service Id",
+          "pageUrl": "/userms/v1/api/subscription/service/feature/service/{serviceId}",
+          "writeAccess": false,
+          "readAccess": true
+        }
+      ]
+    }
+  ],
+  "userModule": [
+    {
+      "id": "USER01",
+      "name": "User",
+      "parentId": null,
+      "actions": [
+        {
+          "name": "Get User by ID",
+          "action": "GET",
+          "description": "Allows the user to get user details by ID",
+          "pageUrl": "/userms/v1/api/user/{userId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get All Users",
+          "action": "GET",
+          "description": "Allows the user to get all users",
+          "pageUrl": "/userms/v1/api/user/getAll",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get User Details by Username",
+          "action": "GET",
+          "description": "Allows the user to get details for a specific username",
+          "pageUrl": "/userms/v1/api/user/username/{username}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get Users by Role ID",
+          "action": "GET",
+          "description": "Allows the retrieval of user details by role ID",
+          "pageUrl": "/userms/v1/api/user/role/{roleId}",
+          "writeAccess": false,
+          "readAccess": true
+        }
+      ]
+    },
+    {
+      "id": "ROLE01",
+      "name": "Role",
+      "parentId": "USER01",
+      "actions": [
+        {
+          "name": "Create Role",
+          "action": "POST",
+          "description": "Allows the user to create a new role",
+          "pageUrl": "/userms/v1/api/role",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Role",
+          "action": "PUT",
+          "description": "Allows the user to update role details",
+          "pageUrl": "/userms/v1/api/role/{roleId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Get Role by ID",
+          "action": "GET",
+          "description": "Allows the user to get role details by ID",
+          "pageUrl": "/userms/v1/api/role/{roleId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get All Roles",
+          "action": "GET",
+          "description": "Allows the user to get all roles",
+          "pageUrl": "/userms/v1/api/role/getAll",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get Role details By User Id",
+          "action": "GET",
+          "description": "Allows to get a role details by user id",
+          "pageUrl": "/userms/v1/api/role/user/{userId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Delete Role",
+          "action": "DELETE",
+          "description": "Allows the user to delete a role",
+          "pageUrl": "/userms/v1/api/role/{roleId}",
+          "writeAccess": true,
+          "readAccess": false
+        }
+      ]
+    },
+    {
+      "id": "ROLEDEFAULTPERMISSION01",
+      "name": "Role Default Permission",
+      "parentId": "ROLE01",
+      "actions": [
+        {
+          "name": "Create Role Default Permission",
+          "action": "POST",
+          "description": "Allows the admin to create a new role default permission.",
+          "pageUrl": "/userms/v1/api/role/defaultPermission",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Role Default Permission",
+          "action": "PUT",
+          "description": "Allows the admin to update the role default permission details.",
+          "pageUrl": "/userms/v1/api/role/defaultPermission/{roleDefaultPermissionId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Get Role Default Permission by ID",
+          "action": "GET",
+          "description": "Allows the admin to retrieve role default permission details by ID.",
+          "pageUrl": "/userms/v1/api/role/defaultPermission/{roleDefaultPermissionId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get Default Permission File",
+          "action": "GET",
+          "description": "Allows the admin to retrieve the default permission from a file.",
+          "pageUrl": "/userms/v1/api/role/defaultPermission/file",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Delete Role Default Permission By ID",
+          "action": "DELETE",
+          "description": "Allows the admin to delete a role default permission by ID.",
+          "pageUrl": "/userms/v1/api/role/defaultPermission/{roleDefaultPermissionId}",
+          "writeAccess": true,
+          "readAccess": false
+        }
+      ]
+    },
+    {
+      "id": "USERPERMISSION01",
+      "name": "User Permission",
+      "parentId": "USER01",
+      "actions": [
+        {
+          "name": "Create Permission",
+          "action": "POST",
+          "description": "Allows the user to create a new permission",
+          "pageUrl": "/userms/v1/api/permission",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Update Permission",
+          "action": "PUT",
+          "description": "Allows the user to update permission details",
+          "pageUrl": "/userms/v1/api/permission/{permissionId}",
+          "writeAccess": true,
+          "readAccess": false
+        },
+        {
+          "name": "Get Permission by ID",
+          "action": "GET",
+          "description": "Allows the user to get permission details by ID",
+          "pageUrl": "/userms/v1/api/permission/{permissionId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get All Permissions",
+          "action": "GET",
+          "description": "Allows the user to get all permissions",
+          "pageUrl": "/userms/v1/api/permission/getAll",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Get Permission details By User Id",
+          "action": "GET",
+          "description": "Allows to get permission details by user id",
+          "pageUrl": "/userms/v1/api/permission/user/{userId}",
+          "writeAccess": false,
+          "readAccess": true
+        },
+        {
+          "name": "Delete Permission",
+          "action": "DELETE",
+          "description": "Allows the user to delete a permission",
+          "pageUrl": "/userms/v1/api/permission/{permissionId}",
+          "writeAccess": true,
+          "readAccess": false
+        }
+      ]
+    }
+  ]
+}
